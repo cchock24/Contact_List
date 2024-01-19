@@ -127,7 +127,7 @@ public class Contact_List {
     // Search by Last Name
     public Person searchLast(String lastName){
         for(Person p: contacts){
-            if(p.getFirstName().equalsIgnoreCase(lastName)){
+            if(p.getLastName().equalsIgnoreCase(lastName)){
                 return p;
             }
         }
@@ -182,19 +182,36 @@ public class Contact_List {
                 System.out.println("First Name: ");
                 String name = s.nextLine();
                 Person p = searchFirst(name);
-                System.out.println(p);
+                if(p == null){
+                    System.out.println(name + " is not in the list");
+                }
+                else{
+                    System.out.println(p);
+                }
+
             }
             if (num == 7) {
                 System.out.println("Last Name: ");
                 String name = s.nextLine();
                 Person p = searchLast(name);
-                System.out.println(p);
+                if(p == null){
+                    System.out.println(name + " is not in the list");
+                }
+                else{
+                    System.out.println(p);
+                }
             }
             if (num == 8) {
                 System.out.println("Phone Number: ");
                 String phone = s.nextLine();
                 Person p = searchNum(phone);
-                System.out.println(p);
+                if(p == null){
+                    System.out.println(phone + " is not in the list");
+                }
+                else{
+                    System.out.println(p);
+                }
+
             }
         }
     }
